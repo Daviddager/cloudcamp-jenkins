@@ -9,6 +9,11 @@ node('linux') {
         stage('List files') {
             sh "ls -oh"
         }
+        withCredentials([string(credentialsId: 'git-username', variable: 'USERNAME')]) {
+            stage('Get username') {
+                sh "env | sort"
+            }
+        }
     } catch (error){
         throw error
     } finally {
