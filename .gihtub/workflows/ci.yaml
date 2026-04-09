@@ -1,0 +1,7 @@
+on: 
+  push:
+jobs:
+  hello_world:
+    runs-on: ubuntu-slim
+    steps:
+      - run: ls -oh
