@@ -12,6 +12,10 @@ node('linux') {
         withCredentials([string(credentialsId: 'git-username', variable: 'USERNAME')]) {
             stage('Get username') {
                 sh "env | sort"
+                def a = 3
+                def b = 5
+                c = a + b
+                echo "${b}"
             }
         }
     } catch (error){
