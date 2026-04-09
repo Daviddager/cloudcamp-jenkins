@@ -1,7 +1,7 @@
 node('linux') {
     try {
         stage('Hello') {
-            echo "Hello World!"
+            echo "Hello World from AWS EC2!"
         }
         stage('Checkout') {
             checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Daviddager/commit-test.git']])
@@ -14,4 +14,8 @@ node('linux') {
     } finally {
         cleanWs()
     }
+}
+node('main') {
+    echo "Hello from Jenkins leader"
+
 }
