@@ -17,5 +17,4 @@ node('linux') {
 }
 node('main') {
     echo "Hello from Jenkins leader"
-
 }
